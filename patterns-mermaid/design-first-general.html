@@ -8,20 +8,15 @@
 <body>
     <div class="mermaid">
         graph LR
-        A[Postman API Builder] --> B
-        A-->C
-        A-->D
-        A-->E
-        B-->F
+        A(Postman API Builder) --> B(Documentation)
+        A-->C(Mocks)
+        A-->D(Tests)
+        A-->E(Monitors)
+        B-->F(API Network)
         C-->F
         D-->F
         E-->F
-    </div>
-    <div class="mermaid">
-        graph LR
-        A --- B
-        B-->C[forbidden]
-        B-->D(Tests);
+        A-->G(Implementation - Code)
     </div>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });
