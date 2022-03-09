@@ -2,7 +2,7 @@
 
 # Workflow Patterns for API-first design, development, testing, publishing, and discovery.
 
-[This workspace](https://postman.postman.co/workspace/6342c1d6-3bdc-4315-b288-8473fdacf46f/overview) includes:
+[This workspace](https://postman.postman.co/workspace/API-First-Workflow-Patterns~d65e21fe-a15c-42a8-9fc1-6b996d24941f/overview) includes:
 
 1.  machine-readable pattern definitions (see API-First Workflow Pattern ***Definitions*** collection), and
 2.  a framework collection to enable the automations by instrumenting the Postman API (see API-First Workflow Pattern ***Automations*** collection on the left, which automates the content in [this other workspace](https://postman.postman.co/workspace/Workflow-Automations-Demo~6342c1d6-3bdc-4315-b288-8473fdacf46f/overview)).
