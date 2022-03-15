@@ -35,5 +35,5 @@ jobs:
       #env:
       #  POSTMAN_API_KEY: ${{ secrets.INSURANCE_API_KEY }}
       with:
-        collection: workflow-collections/no.json
-        environment: workflow-collections/env-no.json
+        collection: workflow-collections/API-First_Workflow_Pattern_Automations.json
+        environment: workflow-collections/Env-Automations-Demo.postman_environment.json
