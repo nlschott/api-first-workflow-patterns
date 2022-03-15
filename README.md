@@ -2,6 +2,9 @@
 
 # Workflow Patterns for API-first design, development, testing, publishing, and discovery.
 
+Update: For the automation use case, here is a GitHub Action which instruments most of this, using the collection seen here! https://github.com/nlschott/api-first-workflow-patterns/blob/main/.github/workflows/api-first-workflow-example.yml
+
+
 [This workspace](https://postman.postman.co/workspace/API-First-Workflow-Patterns~d65e21fe-a15c-42a8-9fc1-6b996d24941f/overview) includes:
 
 1.  machine-readable pattern definitions (see API-First Workflow Pattern ***Definitions*** collection), and
