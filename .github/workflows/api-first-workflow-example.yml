@@ -32,8 +32,9 @@ jobs:
     # API-First Workflow Automation (Pattern) Example
     - uses: actions/checkout@master
     - uses: matt-ball/newman-action@master
-      #env:
+      env:
       #  POSTMAN_API_KEY: ${{ secrets.INSURANCE_API_KEY }}
+        external_schema_url: https://c7a968e2-f035-4d51-a0b2-794d31eeb4c0.mock.pstmn.io/specs/users.yaml
       with:
         collection: workflow-collections/API-First_Workflow_Pattern_Automations.json
         environment: workflow-collections/Env-Automations-Demo.postman_environment.json
