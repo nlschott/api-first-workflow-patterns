@@ -38,6 +38,6 @@ jobs:
       with:
         collection: workflow-collections/API-First_Workflow_Pattern_Automations.json
         environment: workflow-collections/Env-Automations-Demo.postman_environment.json
-        envVar: ${{ format( '[		{			"key": "external-schema-url",			"value": "https://c7a968e2-f035-4d51-a0b2-794d31eeb4c0.mock.pstmn.io/specs/users.yaml"		},   {			"key": "postman-api-key",			"value": "{0}"		}     ]', secrets.WorkflowAutoDemoTargetWSKey) }}
+        envVar: "[		{			'key': 'external-schema-url',			'value': 'https://c7a968e2-f035-4d51-a0b2-794d31eeb4c0.mock.pstmn.io/specs/users.yaml'		},   {			'key': 'postman-api-key',			'value': '${{secrets.WorkflowAutoDemoTargetWSKey}}'		}     ]"
  #        envVar: '{	"values": [		{			"key": "external-schema-url",			"value": "https://c7a968e2-f035-4d51-a0b2-794d31eeb4c0.mock.pstmn.io/specs/users.yaml",			"type": "default",			"enabled": true		}    ]}'
         #envVar: '{"values":[{ "key": "external_schema_url", "value": "https://c7a968e2-f035-4d51-a0b2-794d31eeb4c0.mock.pstmn.io/specs/users.yaml" }]}'
