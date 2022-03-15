@@ -16,16 +16,20 @@
               "let schemaWithNewlines = pm.response.text()",
               "const newLineRegex = /\\n/g",
               "let schemaWithoutNewlines = schemaWithNewlines.replace(newLineRegex, '\\\\n')",
+              "const doubleQuoteRegex = /\\\"/g",
+              "let schemaWithoutNewlinesOrQuotes = schemaWithoutNewlines.replace(doubleQuoteRegex, '\\\\\"')",
+              "const escapeTheEscapes = /\\\\\\\\/g",
+              "let escapedEscapes = schemaWithoutNewlinesOrQuotes.replace(escapeTheEscapes, '\\\\\\\\\\\\')",
               "",
-              "pm.environment.set('schema', schemaWithoutNewlines)",
+              "pm.environment.set('schema', escapedEscapes)",
               "",
-              "console.log(schemaWithoutNewlines)"
+              "console.log(escapedEscapes)"
             ],
             "type": "text/javascript"
           }
         }
       ],
-      "_postman_id": "c4ef8fd4-34b1-41a9-afed-8e06cfad6ba5",
+      "id": "c4ef8fd4-34b1-41a9-afed-8e06cfad6ba5",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -35,7 +39,7 @@
         },
         "method": "GET",
         "header": [],
-        "url": "{{external-schema-base-url}}/{{external-schema-relative-path}}"
+        "url": "{{external-schema-url}}"
       },
       "response": []
     },
@@ -59,7 +63,7 @@
           }
         }
       ],
-      "_postman_id": "ff08bf73-8412-4a9c-b250-e040ee79d0ab",
+      "id": "ff08bf73-8412-4a9c-b250-e040ee79d0ab",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -74,10 +78,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n\t\"schema\": {\n\t\t\"language\": \"yaml\",\n\t\t\"schema\": \"{{retrievedSchema}}\",\n\t\t\"type\": \"openapi3\"\n\t}\n}",
-          "options": {
-            "raw": {}
-          }
+          "raw": "{\n\t\"schema\": {\n\t\t\"language\": \"{{specLanguage}}\",\n\t\t\"schema\": \"{{retrievedSchema}}\",\n\t\t\"type\": \"{{specType}}\"\n\t}\n}"
         },
         "url": "https://api.getpostman.com/apis/{{apiId}}/versions/{{apiVersionId}}/schemas/{{schemaId}}",
         "description": "This call updates an existing schema.\n\nRequest body should contain a `schema` object which should atleast have these properties with `string` values:\n\n- **`type`**: Allowed types are `openapi3`, `openapi2`, `openapi1`, `raml` and `graphql`.\n- **`language`** : Allowed languages are `json` and `yaml` for OpenAPI and RAML schema types. GraphQL schema type accepts only `graphql` language.\n- **`schema`**: Optional. If passed, must be the content of the schema as a `string`.\n\nResponse contains a `schema` object with all the details related to the created schema, namely, `id`, `language`, `type` etc. \n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
@@ -97,10 +98,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"schema\": {\n\t\t\"language\": \"yaml\",\n\t\t\"schema\": \"{{retrievedSchema}}\",\n\t\t\"type\": \"openapi3_1\"\n\t}\n}",
-              "options": {
-                "raw": {}
-              }
+              "raw": "{\n\t\"schema\": {\n\t\t\"language\": \"yaml\",\n\t\t\"schema\": \"{{retrievedSchema}}\",\n\t\t\"type\": \"openapi3_1\"\n\t}\n}"
             },
             "url": "https://api.getpostman.com/apis/{{apiId}}/versions/{{apiVersionId}}/schemas/{{schemaId}}"
           },
@@ -165,7 +163,7 @@
     },
     {
       "name": "Sync Documentation with Schema",
-      "_postman_id": "881f7789-1609-4073-b59f-cbb5119c9aaf",
+      "id": "881f7789-1609-4073-b59f-cbb5119c9aaf",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -241,7 +239,7 @@
     },
     {
       "name": "Sync Mock with Schema",
-      "_postman_id": "256e6ee7-bfac-43c8-a759-b14606061144",
+      "id": "256e6ee7-bfac-43c8-a759-b14606061144",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -317,7 +315,7 @@
     },
     {
       "name": "Sync Smoke Test Monitor with Schema",
-      "_postman_id": "d2150cde-2917-4067-92ae-3f25e004c019",
+      "id": "d2150cde-2917-4067-92ae-3f25e004c019",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -423,10 +421,9 @@
   ],
   "variable": [
     {
-      "id": "8155ee1a-47bd-4f5e-a910-58651828f904",
+      "id": "fc5f0712-4d8b-48a7-ac09-22c8f99c4de8",
       "key": "retrievedSchema",
-      "value": "",
-      "type": "string"
+      "value": ""
     }
   ]
 }
