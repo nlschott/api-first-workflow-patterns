@@ -2,7 +2,7 @@
 
 # Workflow Patterns for API-first design, development, testing, publishing, and discovery.
 
-_Update_: For the automation use case, here is a GitHub Action which instruments most of this, using the collection seen here! 
+_Update_: For the automation use case, here is a GitHub workflow which instruments the target workspace, using the collection seen here
 - https://github.com/nlschott/api-first-workflow-patterns/blob/main/.github/workflows/api-first-workflow-example.yml
 - ![](https://raw.githubusercontent.com/nlschott/api-first-workflow-patterns/main/pattern-diagrams-static/automation-collection-screenshot.png)
 
