@@ -2,10 +2,6 @@
 
 # Workflow Patterns for API-first design, development, testing, publishing, and discovery.
 
-_Update_: For the automation use case, here is a GitHub workflow which instruments the target workspace, using the collection seen here
-- https://github.com/nlschott/api-first-workflow-patterns/blob/main/.github/workflows/api-first-workflow-example.yml
-- ![](https://raw.githubusercontent.com/nlschott/api-first-workflow-patterns/main/pattern-diagrams-static/automation-collection-screenshot.png)
-
 [This workspace](https://www.postman.com/postman/workspace/api-first-workflow-patterns/overview) includes:
 
 1.  machine-readable pattern definitions (see API-First Workflow Pattern ***Definitions*** collection), and
@@ -29,6 +25,10 @@ Preview of pattern definitions:
 ![](https://raw.githubusercontent.com/nlschott/api-first-workflow-patterns/main/pattern-diagrams-static/design-first-general.png)
 
 *   Beautified Versions:
-    
 
 ![](https://raw.githubusercontent.com/nlschott/api-first-workflow-patterns/main/pattern-diagrams-static/beautified-design-first-general.png)
+
+_Update_: For the automation use case, here is a GitHub workflow which instruments the target workspace, using the collection seen here
+- https://github.com/nlschott/api-first-workflow-patterns/blob/main/.github/workflows/api-first-workflow-example.yml
+- ![](https://raw.githubusercontent.com/nlschott/api-first-workflow-patterns/main/pattern-diagrams-static/automation-collection-screenshot.png)
+
