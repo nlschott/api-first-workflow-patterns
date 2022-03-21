@@ -6,7 +6,7 @@ _Update_: For the automation use case, here is a GitHub workflow which instrumen
 - https://github.com/nlschott/api-first-workflow-patterns/blob/main/.github/workflows/api-first-workflow-example.yml
 - ![](https://raw.githubusercontent.com/nlschott/api-first-workflow-patterns/main/pattern-diagrams-static/automation-collection-screenshot.png)
 
-This workspace includes:
+[This workspace](https://www.postman.com/postman/workspace/api-first-workflow-patterns/overview) includes:
 
 1.  machine-readable pattern definitions (see API-First Workflow Pattern ***Definitions*** collection), and
 2.  a framework collection to enable the automations by instrumenting the Postman API (see API-First Workflow Pattern ***Automations*** collection on the left, which automates the content in [this other workspace](https://postman.postman.co/workspace/Workflow-Automations-Demo~6342c1d6-3bdc-4315-b288-8473fdacf46f/overview)).
