@@ -1,4 +1,4 @@
-# Workflow Patterns for API-first design, development, testing, publishing, and discovery.
+# Workflow Patterns for API-First design, development, testing, publishing, and discovery.
 
 [This workspace](https://www.postman.com/postman/workspace/api-first-workflow-patterns/overview) includes:
 
