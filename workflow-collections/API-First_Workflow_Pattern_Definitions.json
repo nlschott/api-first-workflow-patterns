@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "eacc354c-8206-43a3-b03c-8e1e2ac6fe02",
-    "name": "API-First Workflow Pattern Definitions n",
+    "name": "API-First Workflow Pattern Definitions",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
   "item": [
@@ -160,7 +160,7 @@
                 }
               ],
               "responseTime": null,
-              "body": "{\n    \"graph\": {\n        \"direction\": \"LR\",\n        \"edges\": [\n            \"A(Postman API Builder) --> AA>Generate Collections to Provide:]\",\n            \"AA --> B(Documentation)\", \n            \"B --- |<- Ongoing Collaboration ->| B\", \n            \"AA --> C(Mocks)\", \n            \"AA --> D(Tests)\", \n            \"AA --> E(Monitors)\", \n            \"B --> F>Publish / Tag New Versions]\", \n            \"C --> F\", \n            \"D --> F\", \n            \"E --> F\", \n            \"G(Model - Code) --> A\",\n            \"F --> FF(API Network)\"\n        ]\n    }\n}"
+              "body": "{\n    \"graph\": {\n        \"direction\": \"LR\",\n        \"edges\": [\n            \"A(API Management) --> AA>Generate Collections to Provide:]]\",\n            \"AA --> B(Documentation)\", \n            \"B --- |<- Ongoing Collaboration ->| B\", \n            \"AA --> C(Mocks)\", \n            \"AA --> D(Tests)\", \n            \"AA --> E(Monitors)\", \n            \"B --> F>Publish / Tag New Versions]\", \n            \"C --> F\", \n            \"D --> F\", \n            \"E --> F\", \n            \"G(Model - Code) --> A\",\n            \"F --> FF(API Network)\"\n        ]\n    }\n}"
             }
           ]
         }
