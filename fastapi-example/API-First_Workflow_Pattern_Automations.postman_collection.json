@@ -12,10 +12,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"let beautifiedSchema = JSON.stringify(JSON.parse(pm.response.text(), null, 4))",
-							"pm.environment.set('schema', beautifiedSchema)",
-							"",
-							"let schemaWithNewlines = beautifiedSchema",
+							"let schemaWithNewlines = pm.response.text()",
 							"const newLineRegex = /\\n/g",
 							"let schemaWithoutNewlines = schemaWithNewlines.replace(newLineRegex, '\\\\n')",
 							"const doubleQuoteRegex = /\\\"/g",
@@ -23,7 +20,7 @@
 							"const escapeTheEscapes = /\\\\\\\\/g",
 							"let escapedEscapes = schemaWithoutNewlinesOrQuotes.replace(escapeTheEscapes, '\\\\\\\\\\\\')",
 							"",
-							"//pm.environment.set('schema', escapedEscapes)",
+							"pm.environment.set('schema', escapedEscapes)",
 							"",
 							"console.log(escapedEscapes)"
 						],
