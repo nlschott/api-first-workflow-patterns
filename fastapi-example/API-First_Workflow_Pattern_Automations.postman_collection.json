@@ -1,0 +1,546 @@
+{
+	"info": {
+		"_postman_id": "57612636-bea8-4f4a-9901-0d989fb5ec1f",
+		"name": "API-First Workflow Pattern Automations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Request External Schema",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let beautifiedSchema = JSON.stringify(JSON.parse(pm.response.text(), null, 4))",
+							"pm.environment.set('schema', beautifiedSchema)",
+							"",
+							"let schemaWithNewlines = beautifiedSchema",
+							"const newLineRegex = /\\n/g",
+							"let schemaWithoutNewlines = schemaWithNewlines.replace(newLineRegex, '\\\\n')",
+							"const doubleQuoteRegex = /\\\"/g",
+							"let schemaWithoutNewlinesOrQuotes = schemaWithoutNewlines.replace(doubleQuoteRegex, '\\\\\"')",
+							"const escapeTheEscapes = /\\\\\\\\/g",
+							"let escapedEscapes = schemaWithoutNewlinesOrQuotes.replace(escapeTheEscapes, '\\\\\\\\\\\\')",
+							"",
+							"//pm.environment.set('schema', escapedEscapes)",
+							"",
+							"console.log(escapedEscapes)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{external-schema-url}}",
+					"host": [
+						"{{external-schema-url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Schema To Retrieved Spec",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set('retrievedSchema', pm.environment.get('schema'))",
+							"",
+							"console.log('------------------------')",
+							"console.log(pm.collectionVariables.get('retrievedSchema'))",
+							"console.log('^^^retrieved schema^^^')",
+							"console.log('========================')",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"name": "Content-Type",
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"schema\": {\n\t\t\"language\": \"{{specLanguage}}\",\n\t\t\"schema\": \"{{retrievedSchema}}\",\n\t\t\"type\": \"{{specType}}\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "https://api.getpostman.com/apis/{{apiId}}/versions/{{apiVersionId}}/schemas/{{schemaId}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"getpostman",
+						"com"
+					],
+					"path": [
+						"apis",
+						"{{apiId}}",
+						"versions",
+						"{{apiVersionId}}",
+						"schemas",
+						"{{schemaId}}"
+					]
+				},
+				"description": "This call updates an existing schema.\n\nRequest body should contain a `schema` object which should atleast have these properties with `string` values:\n\n- **`type`**: Allowed types are `openapi3`, `openapi2`, `openapi1`, `raml` and `graphql`.\n- **`language`** : Allowed languages are `json` and `yaml` for OpenAPI and RAML schema types. GraphQL schema type accepts only `graphql` language.\n- **`schema`**: Optional. If passed, must be the content of the schema as a `string`.\n\nResponse contains a `schema` object with all the details related to the created schema, namely, `id`, `language`, `type` etc. \n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+			},
+			"response": [
+				{
+					"name": "Update Schema To Retrieved Spec",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"name": "Content-Type",
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"schema\": {\n\t\t\"language\": \"yaml\",\n\t\t\"schema\": \"{{retrievedSchema}}\",\n\t\t\"type\": \"openapi3_1\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "https://api.getpostman.com/apis/{{apiId}}/versions/{{apiVersionId}}/schemas/{{schemaId}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"getpostman",
+								"com"
+							],
+							"path": [
+								"apis",
+								"{{apiId}}",
+								"versions",
+								"{{apiVersionId}}",
+								"schemas",
+								"{{schemaId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Mar 2022 19:40:24 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "x-srv-trace",
+							"value": "v=1;t=138025f9cb90d4f9"
+						},
+						{
+							"key": "x-srv-span",
+							"value": "v=1;s=a74575ed5d19c3c4"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10e-XHsBATQrJ8o+Sq0TyPhgVEZNYJU\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"schema\": {\n        \"id\": \"dfdb7c7e-ab6b-4a92-b34c-b9530240798c\",\n        \"type\": \"openapi3_1\",\n        \"language\": \"yaml\",\n        \"createdBy\": \"15950784\",\n        \"updatedBy\": \"15950784\",\n        \"createdAt\": \"2022-03-07T18:29:35.000Z\",\n        \"updatedAt\": \"2022-03-07T19:40:23.000Z\",\n        \"apiVersion\": \"f6f8414c-cc59-48de-9796-f72e7f6db4d1\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Sync Documentation with Schema",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://api.getpostman.com/apis/{{apiId}}/versions/{{apiVersionId}}/documentation/{{documentationEntityId}}/syncWithSchema",
+					"protocol": "https",
+					"host": [
+						"api",
+						"getpostman",
+						"com"
+					],
+					"path": [
+						"apis",
+						"{{apiId}}",
+						"versions",
+						"{{apiVersionId}}",
+						"documentation",
+						"{{documentationEntityId}}",
+						"syncWithSchema"
+					]
+				},
+				"description": "This call allows you to keep the relation in sync with the API schema.\n\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+			},
+			"response": [
+				{
+					"name": "Sync Documentation with Schema",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.getpostman.com/apis/{{apiId}}/versions/{{apiVersionId}}/documentation/{{documentationEntityId}}/syncWithSchema",
+							"protocol": "https",
+							"host": [
+								"api",
+								"getpostman",
+								"com"
+							],
+							"path": [
+								"apis",
+								"{{apiId}}",
+								"versions",
+								"{{apiVersionId}}",
+								"documentation",
+								"{{documentationEntityId}}",
+								"syncWithSchema"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Mar 2022 19:45:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "16"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "x-srv-trace",
+							"value": "v=1;t=7f9a1a1793aff2af"
+						},
+						{
+							"key": "x-srv-span",
+							"value": "v=1;s=fb2bde0e595b29cb"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10-oV4hJxRVSENxc/wX8+mA4/Pe4tA\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Sync Mock with Schema",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://api.getpostman.com/apis/{{apiId}}/versions/{{apiVersionId}}/mock/{{mockEntityId}}/syncWithSchema",
+					"protocol": "https",
+					"host": [
+						"api",
+						"getpostman",
+						"com"
+					],
+					"path": [
+						"apis",
+						"{{apiId}}",
+						"versions",
+						"{{apiVersionId}}",
+						"mock",
+						"{{mockEntityId}}",
+						"syncWithSchema"
+					]
+				},
+				"description": "This call allows you to keep the relation in sync with the API schema.\n\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+			},
+			"response": [
+				{
+					"name": "Sync Documentation with Schema",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.getpostman.com/apis/{{apiId}}/versions/{{apiVersionId}}/documentation/{{documentationEntityId}}/syncWithSchema",
+							"protocol": "https",
+							"host": [
+								"api",
+								"getpostman",
+								"com"
+							],
+							"path": [
+								"apis",
+								"{{apiId}}",
+								"versions",
+								"{{apiVersionId}}",
+								"documentation",
+								"{{documentationEntityId}}",
+								"syncWithSchema"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Mar 2022 19:45:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "16"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "x-srv-trace",
+							"value": "v=1;t=7f9a1a1793aff2af"
+						},
+						{
+							"key": "x-srv-span",
+							"value": "v=1;s=fb2bde0e595b29cb"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10-oV4hJxRVSENxc/wX8+mA4/Pe4tA\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Sync Smoke Test Monitor with Schema",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://api.getpostman.com/apis/{{apiId}}/versions/{{apiVersionId}}/monitor/{{monitorEntityId}}/syncWithSchema",
+					"protocol": "https",
+					"host": [
+						"api",
+						"getpostman",
+						"com"
+					],
+					"path": [
+						"apis",
+						"{{apiId}}",
+						"versions",
+						"{{apiVersionId}}",
+						"monitor",
+						"{{monitorEntityId}}",
+						"syncWithSchema"
+					]
+				},
+				"description": "This call allows you to keep the relation in sync with the API schema.\n\n\n> Requires <a href=\"#authentication\">API Key</a> as `X-Api-Key` request header or `apikey` URL query parameter."
+			},
+			"response": [
+				{
+					"name": "Sync Documentation with Schema",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.getpostman.com/apis/{{apiId}}/versions/{{apiVersionId}}/documentation/{{documentationEntityId}}/syncWithSchema",
+							"protocol": "https",
+							"host": [
+								"api",
+								"getpostman",
+								"com"
+							],
+							"path": [
+								"apis",
+								"{{apiId}}",
+								"versions",
+								"{{apiVersionId}}",
+								"documentation",
+								"{{documentationEntityId}}",
+								"syncWithSchema"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Mar 2022 19:45:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "16"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "x-srv-trace",
+							"value": "v=1;t=7f9a1a1793aff2af"
+						},
+						{
+							"key": "x-srv-span",
+							"value": "v=1;s=fb2bde0e595b29cb"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10-oV4hJxRVSENxc/wX8+mA4/Pe4tA\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{postman-api-key}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "X-API-Key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "retrievedSchema",
+			"value": ""
+		}
+	]
+}
