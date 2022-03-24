@@ -22,7 +22,11 @@
 							"",
 							"pm.environment.set('schema', escapedEscapes)",
 							"",
-							"console.log(escapedEscapes)"
+							"console.log(escapedEscapes)",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
 						],
 						"type": "text/javascript"
 					}
@@ -108,7 +112,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"schema\": {\n\t\t\"language\": \"yaml\",\n\t\t\"schema\": \"{{retrievedSchema}}\",\n\t\t\"type\": \"openapi3_1\"\n\t}\n}"
+							"raw": "{\n\t\"schema\": {\n\t\t\"language\": \"{{specLanguage}}\",\n\t\t\"schema\": \"{{retrievedSchema}}\",\n\t\t\"type\": \"{{specType}}\"\n\t}\n}"
 						},
 						"url": {
 							"raw": "https://api.getpostman.com/apis/{{apiId}}/versions/{{apiVersionId}}/schemas/{{schemaId}}",
@@ -134,7 +138,7 @@
 					"header": [
 						{
 							"key": "Date",
-							"value": "Mon, 07 Mar 2022 19:40:24 GMT"
+							"value": "Thu, 24 Mar 2022 15:40:19 GMT"
 						},
 						{
 							"key": "Content-Type",
@@ -162,15 +166,15 @@
 						},
 						{
 							"key": "x-srv-trace",
-							"value": "v=1;t=138025f9cb90d4f9"
+							"value": "v=1;t=0d675a56303e4c7e"
 						},
 						{
 							"key": "x-srv-span",
-							"value": "v=1;s=a74575ed5d19c3c4"
+							"value": "v=1;s=d594939217bc9b1d"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"10e-XHsBATQrJ8o+Sq0TyPhgVEZNYJU\""
+							"value": "W/\"10c-t32qLh/iwl1g9fwKwQYJMvWBs54\""
 						},
 						{
 							"key": "Vary",
@@ -182,12 +186,25 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"schema\": {\n        \"id\": \"dfdb7c7e-ab6b-4a92-b34c-b9530240798c\",\n        \"type\": \"openapi3_1\",\n        \"language\": \"yaml\",\n        \"createdBy\": \"15950784\",\n        \"updatedBy\": \"15950784\",\n        \"createdAt\": \"2022-03-07T18:29:35.000Z\",\n        \"updatedAt\": \"2022-03-07T19:40:23.000Z\",\n        \"apiVersion\": \"f6f8414c-cc59-48de-9796-f72e7f6db4d1\"\n    }\n}"
+					"body": "{\n    \"schema\": {\n        \"id\": \"dfdb7c7e-ab6b-4a92-b34c-b9530240798c\",\n        \"type\": \"openapi3\",\n        \"language\": \"json\",\n        \"createdBy\": \"15950784\",\n        \"updatedBy\": \"15950784\",\n        \"createdAt\": \"2022-03-07T18:29:35.000Z\",\n        \"updatedAt\": \"2022-03-24T15:40:18.000Z\",\n        \"apiVersion\": \"f6f8414c-cc59-48de-9796-f72e7f6db4d1\"\n    }\n}"
 				}
 			]
 		},
 		{
 			"name": "Sync Documentation with Schema",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -292,6 +309,19 @@
 		},
 		{
 			"name": "Sync Mock with Schema",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -396,6 +426,19 @@
 		},
 		{
 			"name": "Sync Smoke Test Monitor with Schema",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [],
