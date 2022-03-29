@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "eacc354c-8206-43a3-b03c-8e1e2ac6fe02",
-    "name": "Patterns: API-First Workflow",
+    "name": "Patterns: API-First Workflows",
     "description": "Workflow **pattern definitions** for API-first design, development, testing, publishing, and discovery.",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
