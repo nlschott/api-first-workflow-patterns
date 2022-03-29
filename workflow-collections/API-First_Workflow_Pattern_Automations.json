@@ -2,6 +2,7 @@
   "info": {
     "_postman_id": "a44c86f0-a7ab-4d17-afe0-d0d5ab393b91",
     "name": "API-First Workflow Pattern Automations",
+    "description": "Workflow automations for API-first design, development, testing, publishing, and discovery.",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
   "item": [
@@ -421,7 +422,7 @@
   ],
   "variable": [
     {
-      "id": "65d7d167-4783-4e7c-b18a-5f3f28e001bf",
+      "id": "c8e11eea-7fbf-4e81-99f1-6dfad1ba5689",
       "key": "retrievedSchema",
       "value": ""
     }
