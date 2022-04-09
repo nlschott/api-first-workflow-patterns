@@ -24,7 +24,11 @@
               "",
               "pm.environment.set('schema', escapedEscapes)",
               "",
-              "console.log(escapedEscapes)"
+              "console.log(escapedEscapes)",
+              "",
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
             ],
             "type": "text/javascript"
           }
@@ -62,6 +66,18 @@
             ],
             "type": "text/javascript"
           }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "02a43a53-71fa-4172-9c7b-535b661ecae0",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
         }
       ],
       "id": "ff08bf73-8412-4a9c-b250-e040ee79d0ab",
@@ -86,7 +102,7 @@
       },
       "response": [
         {
-          "id": "37531333-f1b8-4349-a8c6-6ce3742bd7b5",
+          "id": "8b9c127a-f6fe-4dce-b112-fcef68d2edb8",
           "name": "Update Schema To Retrieved Spec",
           "originalRequest": {
             "method": "PUT",
@@ -99,7 +115,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"schema\": {\n\t\t\"language\": \"yaml\",\n\t\t\"schema\": \"{{retrievedSchema}}\",\n\t\t\"type\": \"openapi3_1\"\n\t}\n}"
+              "raw": "{\n\t\"schema\": {\n\t\t\"language\": \"{{specLanguage}}\",\n\t\t\"schema\": \"{{retrievedSchema}}\",\n\t\t\"type\": \"{{specType}}\"\n\t}\n}"
             },
             "url": "https://api.getpostman.com/apis/{{apiId}}/versions/{{apiVersionId}}/schemas/{{schemaId}}"
           },
@@ -109,7 +125,7 @@
           "header": [
             {
               "key": "Date",
-              "value": "Mon, 07 Mar 2022 19:40:24 GMT"
+              "value": "Thu, 24 Mar 2022 15:40:19 GMT"
             },
             {
               "key": "Content-Type",
@@ -137,15 +153,15 @@
             },
             {
               "key": "x-srv-trace",
-              "value": "v=1;t=138025f9cb90d4f9"
+              "value": "v=1;t=0d675a56303e4c7e"
             },
             {
               "key": "x-srv-span",
-              "value": "v=1;s=a74575ed5d19c3c4"
+              "value": "v=1;s=d594939217bc9b1d"
             },
             {
               "key": "ETag",
-              "value": "W/\"10e-XHsBATQrJ8o+Sq0TyPhgVEZNYJU\""
+              "value": "W/\"10c-t32qLh/iwl1g9fwKwQYJMvWBs54\""
             },
             {
               "key": "Vary",
@@ -158,12 +174,26 @@
           ],
           "cookie": [],
           "responseTime": null,
-          "body": "{\n    \"schema\": {\n        \"id\": \"dfdb7c7e-ab6b-4a92-b34c-b9530240798c\",\n        \"type\": \"openapi3_1\",\n        \"language\": \"yaml\",\n        \"createdBy\": \"15950784\",\n        \"updatedBy\": \"15950784\",\n        \"createdAt\": \"2022-03-07T18:29:35.000Z\",\n        \"updatedAt\": \"2022-03-07T19:40:23.000Z\",\n        \"apiVersion\": \"f6f8414c-cc59-48de-9796-f72e7f6db4d1\"\n    }\n}"
+          "body": "{\n    \"schema\": {\n        \"id\": \"dfdb7c7e-ab6b-4a92-b34c-b9530240798c\",\n        \"type\": \"openapi3\",\n        \"language\": \"json\",\n        \"createdBy\": \"15950784\",\n        \"updatedBy\": \"15950784\",\n        \"createdAt\": \"2022-03-07T18:29:35.000Z\",\n        \"updatedAt\": \"2022-03-24T15:40:18.000Z\",\n        \"apiVersion\": \"f6f8414c-cc59-48de-9796-f72e7f6db4d1\"\n    }\n}"
         }
       ]
     },
     {
       "name": "Sync Documentation with Schema",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "aa3c14b6-1be4-4ff5-b935-03b11b5a328e",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
       "id": "881f7789-1609-4073-b59f-cbb5119c9aaf",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
@@ -240,6 +270,20 @@
     },
     {
       "name": "Sync Mock with Schema",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "cd9f4b7d-5b2f-499a-b52f-22e3e6ee6715",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
       "id": "256e6ee7-bfac-43c8-a759-b14606061144",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
@@ -316,6 +360,20 @@
     },
     {
       "name": "Sync Smoke Test Monitor with Schema",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "7d55761f-0bf9-49ae-9057-f83ec25a90fe",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
       "id": "d2150cde-2917-4067-92ae-3f25e004c019",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
@@ -422,7 +480,7 @@
   ],
   "variable": [
     {
-      "id": "cfef4af3-a7ba-45bf-8c60-f8ee2b298890",
+      "id": "7bbc341c-6a1f-4e0a-be9d-004f2d506fd4",
       "key": "retrievedSchema",
       "value": ""
     }
