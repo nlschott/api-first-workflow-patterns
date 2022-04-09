@@ -44,7 +44,7 @@
         },
         "method": "GET",
         "header": [],
-        "url": "https://c7a968e2-f035-4d51-a0b2-794d31eeb4c0.mock.pstmn.io"
+        "url": "{{external-schema-url}}"
       },
       "response": []
     },
@@ -480,7 +480,7 @@
   ],
   "variable": [
     {
-      "id": "cbcd4127-5c75-4d35-8116-a89c12d41680",
+      "id": "9a920f4e-37b3-4c21-b589-d1e9346b1c23",
       "key": "retrievedSchema",
       "value": ""
     }
