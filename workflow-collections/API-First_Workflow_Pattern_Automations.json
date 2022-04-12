@@ -2,7 +2,7 @@
   "info": {
     "_postman_id": "a44c86f0-a7ab-4d17-afe0-d0d5ab393b91",
     "name": "Automations: API-First Workflows",
-    "description": "Workflow **automations** for API-first design, development, testing, publishing, and discovery.",
+    "description": "Workflow **automations** for API-first design, development, testing, publishing, and discovery.\n\n**2022-04-12 Update**\n\n*   Currently automatically handles deltas to existing schema / mock / smoke tests / documentation collections.\n*   Coming soon:\n    *   automatically handling net new APIs and versions, and related collections;\n    *   simpler env config to get started.",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
   "item": [
@@ -480,7 +480,7 @@
   ],
   "variable": [
     {
-      "id": "70684427-2692-431d-8368-bc63189cf032",
+      "id": "93e7a5e6-b0fd-4e05-b928-548cbf2387a9",
       "key": "retrievedSchema",
       "value": ""
     }
