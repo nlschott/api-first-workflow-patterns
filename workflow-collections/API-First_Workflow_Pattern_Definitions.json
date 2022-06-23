@@ -1,210 +1,247 @@
 {
-  "info": {
-    "_postman_id": "eacc354c-8206-43a3-b03c-8e1e2ac6fe02",
-    "name": "API-First Workflow Pattern Definitions",
-    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "render",
-      "item": [
-        {
-          "name": "Render | Design First - General",
-          "id": "269f37d4-075f-4759-87a5-dc59b58330c5",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": "{{url}}/patterns/id/1/render"
-          },
-          "response": [
-            {
-              "id": "50b04eaf-e8ce-4ffd-9885-6fc7461be7e1",
-              "name": "200 OK | Render | Design First - General",
-              "originalRequest": {
-                "method": "GET",
-                "header": [],
-                "url": "{{url}}/patterns/id/1/render"
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "",
-              "header": [
-                ""
-              ],
-              "cookie": [
-                {
-                  "expires": "Invalid Date"
-                }
-              ],
-              "responseTime": null,
-              "body": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"utf-8\">\n</head>\n\n<body>\n    <h1>Design First</h1>\n    <div class=\"mermaid\">\n        graph LR\n        A(Deign - Model) --> AA>Generate Collections to Provide:]\n        AA --> B(Documentation)\n        B --- |<- Ongoing Collaboration ->| B\n        AA --> C(Mocks)\n        AA --> D(Tests)\n        AA --> E(Monitors)\n        B --> F>Publish / Tag New Versions]\n        C --> F\n        D --> F\n        E --> F\n        A --> G(Implementation - Code)\n        F --> FF(API Network)\n    </div>\n    <script src=\"https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js\"></script>\n    <script>mermaid.initialize({ startOnLoad: true });\n    </script>\n</body>\n\n</html>"
-            }
-          ]
-        },
-        {
-          "name": "Render | Code First - General",
-          "id": "aac4ab9b-4510-4c38-a92e-2c6a62c705b1",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": "{{url}}/patterns/id/2/render"
-          },
-          "response": [
-            {
-              "id": "04b4d306-93f7-4418-ace4-0842bcf07fe1",
-              "name": "200 OK | Render | Code First - General",
-              "originalRequest": {
-                "method": "GET",
-                "header": [],
-                "url": "{{url}}/patterns/id/2/render"
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "",
-              "header": [
-                ""
-              ],
-              "cookie": [
-                {
-                  "expires": "Invalid Date"
-                }
-              ],
-              "responseTime": null,
-              "body": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"utf-8\">\n</head>\n\n<body>\n    <h1>Code First</h1>\n    <div class=\"mermaid\">\n        graph LR \n        A(API Spec) --> AA>Generate Collections to Provide:]\n        AA --> B(Documentation)\n        B --- |<- Ongoing Collaboration ->| B\n        AA --> C(Mocks)\n        AA --> D(Tests)\n        AA --> E(Monitors)\n        B --> F>Publish / Tag New Versions]\n        C --> F\n        D --> F\n        E --> F\n        G(Model - Code) --> A\n        F --> FF(API Network)\n    </div>\n    <script src=\"https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js\"></script>\n    <script>mermaid.initialize({ startOnLoad: true });\n    </script>\n</body>\n\n</html>"
-            }
-          ]
-        }
-      ],
-      "id": "7d2a6961-0d2f-4bf2-a913-ceb4233af549"
-    },
-    {
-      "name": "data",
-      "item": [
-        {
-          "name": "Data | Design First - General",
-          "id": "bccbf8ef-1c55-4058-ac67-3b167530e27e",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": "{{url}}/patterns/id/1/data"
-          },
-          "response": [
-            {
-              "id": "b8f9aba0-beb7-428a-9ce4-aa909c4d80bc",
-              "name": "200 OK | Data | Design First - General",
-              "originalRequest": {
-                "method": "GET",
-                "header": [],
-                "url": "{{url}}/patterns/id/1/data"
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json",
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "cookie": [
-                {
-                  "expires": "Invalid Date"
-                }
-              ],
-              "responseTime": null,
-              "body": "{\n    \"graph\": {\n        \"direction\": \"LR\",\n        \"edges\": [\n            \"A(Design - Model) --> AA>Generate Collections to Provide:]\",\n            \"AA --> B(Documentation)\", \n            \"B --- |<- Ongoing Collaboration ->| B\", \n            \"AA --> C(Mocks)\", \n            \"AA --> D(Tests)\", \n            \"AA --> E(Monitors)\", \n            \"B --> F>Publish / Tag New Versions]\", \n            \"C --> F\", \n            \"D --> F\", \n            \"E --> F\", \n            \"A --> G(Implementation - Code)\", \n            \"F --> FF(API Network)\"\n        ]\n    }\n}"
-            }
-          ]
-        },
-        {
-          "name": "Data | Code First - General",
-          "id": "381902b3-6a3b-47d7-98ee-9f9ff4f7e945",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": "{{url}}/patterns/id/2/data"
-          },
-          "response": [
-            {
-              "id": "c24a82b2-53b3-4a42-896e-0a0271e3e5b7",
-              "name": "200 OK | Data | Code First - General",
-              "originalRequest": {
-                "method": "GET",
-                "header": [],
-                "url": "{{url}}/patterns/id/2/data"
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json",
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "cookie": [
-                {
-                  "expires": "Invalid Date"
-                }
-              ],
-              "responseTime": null,
-              "body": "{\n    \"graph\": {\n        \"direction\": \"LR\",\n        \"edges\": [\n            \"A(API Spec) --> AA>Generate Collections to Provide:]]\",\n            \"AA --> B(Documentation)\", \n            \"B --- |<- Ongoing Collaboration ->| B\", \n            \"AA --> C(Mocks)\", \n            \"AA --> D(Tests)\", \n            \"AA --> E(Monitors)\", \n            \"B --> F>Publish / Tag New Versions]\", \n            \"C --> F\", \n            \"D --> F\", \n            \"E --> F\", \n            \"G(Model - Code) --> A\",\n            \"F --> FF(API Network)\"\n        ]\n    }\n}"
-            }
-          ]
-        }
-      ],
-      "id": "c9111732-bf3f-4ba0-9a4c-98ccf4617f58"
-    },
-    {
-      "name": "List",
-      "id": "7566bfd2-2018-42fb-874a-b6a040a71fb6",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": "{{url}}/patterns"
-      },
-      "response": [
-        {
-          "id": "d708c465-b137-4a51-a36c-b08d7225a6b0",
-          "name": "List",
-          "originalRequest": {
-            "method": "GET",
-            "header": [],
-            "url": "{{url}}/patterns"
-          },
-          "_postman_previewlanguage": "json",
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json",
-              "description": "",
-              "type": "text"
-            }
-          ],
-          "cookie": [
-            {
-              "expires": "Invalid Date"
-            }
-          ],
-          "responseTime": null,
-          "body": "[\n    {\"id\": \"1\", \"name\": \"design-first-general\", \"data\": \"https://69cc9346-cff2-4817-8eaa-3008aa1c4fdf.mock.pstmn.io/patterns/id/1/data\", \"render\": \"https://69cc9346-cff2-4817-8eaa-3008aa1c4fdf.mock.pstmn.io/patterns/id/1/render\"},\n    {\"id\": \"2\", \"name\": \"code-first-general\", \"data\": \"https://69cc9346-cff2-4817-8eaa-3008aa1c4fdf.mock.pstmn.io/patterns/id/2/data\", \"render\": \"https://69cc9346-cff2-4817-8eaa-3008aa1c4fdf.mock.pstmn.io/patterns/id/2/render\"}\n    \n]"
-        }
-      ]
-    }
-  ]
+	"info": {
+		"_postman_id": "eacc354c-8206-43a3-b03c-8e1e2ac6fe02",
+		"name": "Patterns: API-First Workflows",
+		"description": "Workflow **pattern definitions** for API-first design, development, testing, publishing, and discovery.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "render",
+			"item": [
+				{
+					"name": "Render | Design First - General",
+					"id": "269f37d4-075f-4759-87a5-dc59b58330c5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/patterns/id/1/render"
+					},
+					"response": [
+						{
+							"id": "50b04eaf-e8ce-4ffd-9885-6fc7461be7e1",
+							"name": "200 OK | Render | Design First - General",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/patterns/id/1/render"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								""
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"responseTime": null,
+							"body": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"utf-8\">\n</head>\n\n<body>\n    <h1>Design First</h1>\n    <div class=\"mermaid\">\n        graph LR\n        A(Deign - Model) --> AA>Generate Collections to Provide:]\n        AA --> B(Documentation)\n        B --- |<- Ongoing Collaboration ->| B\n        AA --> C(Mocks)\n        AA --> D(Tests)\n        AA --> E(Monitors)\n        B --> F>Publish / Tag New Versions]\n        C --> F\n        D --> F\n        E --> F\n        A --> G(Implementation - Code)\n        F --> FF(API Network)\n    </div>\n    <script src=\"https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js\"></script>\n    <script>mermaid.initialize({ startOnLoad: true });\n    </script>\n</body>\n\n</html>"
+						}
+					]
+				},
+				{
+					"name": "Render | Code First - General",
+					"id": "aac4ab9b-4510-4c38-a92e-2c6a62c705b1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/patterns/id/2/render"
+					},
+					"response": [
+						{
+							"id": "04b4d306-93f7-4418-ace4-0842bcf07fe1",
+							"name": "200 OK | Render | Code First - General",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/patterns/id/2/render"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								""
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"responseTime": null,
+							"body": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"utf-8\">\n</head>\n\n<body>\n    <h1>Code First</h1>\n    <div class=\"mermaid\">\n        graph LR \n        A(API Spec) --> AA>Generate Collections to Provide:]\n        AA --> B(Documentation)\n        B --- |<- Ongoing Collaboration ->| B\n        AA --> C(Mocks)\n        AA --> D(Tests)\n        AA --> E(Monitors)\n        B --> F>Publish / Tag New Versions]\n        C --> F\n        D --> F\n        E --> F\n        G(Model - Code) --> A\n        F --> FF(API Network)\n    </div>\n    <script src=\"https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js\"></script>\n    <script>mermaid.initialize({ startOnLoad: true });\n    </script>\n</body>\n\n</html>"
+						}
+					]
+				},
+				{
+					"name": "Render | Automation FSM",
+					"id": "ab6d35c6-27f5-4920-9340-07993e12583f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/automations/render"
+					},
+					"response": [
+						{
+							"id": "e0290c3b-c9ad-412b-a8fd-0edc0c25259e",
+							"name": "200 OK | Render | Code First - General",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/automations/render"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								""
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"responseTime": null,
+							"body": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"utf-8\">\n</head>\n\n<body>\n    <h1>API-First Workflow Patterns - Automations State Machine</h1>\n    <div class=\"mermaid\">\n        graph TB\n        A(Request Schema) --> B(Check for Existing API)\n        B --> C(Check for Existing API Version)\n        B --> D(Create API)\n        C --> E(Check for Existing Schema)\n        C --> F(Create API Version)\n        E --> G(Update Schema to Retrieved Spec)\n        E --> H(Create Schema for Retrieved Spec)\n        G --> I(Check for Existing Documentation)\n        D --> F\n        F --> H\n        I --> J(Sync Documentation with Schema)\n        I --> K(Create Documentation from Schema)\n        I --> L(Check for Existing Mock)\n        J --> L\n        K --> L\n        H --> I\n        L --> M(Sync Mock with Schema)\n        L --> O(Create Environment)\n        O --> P(Create Environment Relation)\n        P --> Q(Create Collection from Schema)\n        Q --> R(Create Mock)\n        R --> S(Update Environment)\n        S --> T(Create Mock Relation)\n        L --> Z(Unset Temp Env Vars)\n        M --> Z\n        T --> Z\n    </div>\n    <script src=\"https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js\"></script>\n    <script>mermaid.initialize({ startOnLoad: true });\n    </script>\n</body>\n\n</html>"
+						}
+					]
+				}
+			],
+			"id": "7d2a6961-0d2f-4bf2-a913-ceb4233af549"
+		},
+		{
+			"name": "data",
+			"item": [
+				{
+					"name": "Data | Design First - General",
+					"id": "bccbf8ef-1c55-4058-ac67-3b167530e27e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/patterns/id/1/data"
+					},
+					"response": [
+						{
+							"id": "b8f9aba0-beb7-428a-9ce4-aa909c4d80bc",
+							"name": "200 OK | Data | Design First - General",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/patterns/id/1/data"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"responseTime": null,
+							"body": "{\n    \"graph\": {\n        \"direction\": \"LR\",\n        \"edges\": [\n            \"A(Design - Model) --> AA>Generate Collections to Provide:]\",\n            \"AA --> B(Documentation)\", \n            \"B --- |<- Ongoing Collaboration ->| B\", \n            \"AA --> C(Mocks)\", \n            \"AA --> D(Tests)\", \n            \"AA --> E(Monitors)\", \n            \"B --> F>Publish / Tag New Versions]\", \n            \"C --> F\", \n            \"D --> F\", \n            \"E --> F\", \n            \"A --> G(Implementation - Code)\", \n            \"F --> FF(API Network)\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Data | Code First - General",
+					"id": "381902b3-6a3b-47d7-98ee-9f9ff4f7e945",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/patterns/id/2/data"
+					},
+					"response": [
+						{
+							"id": "c24a82b2-53b3-4a42-896e-0a0271e3e5b7",
+							"name": "200 OK | Data | Code First - General",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}/patterns/id/2/data"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"responseTime": null,
+							"body": "{\n    \"graph\": {\n        \"direction\": \"LR\",\n        \"edges\": [\n            \"A(API Spec) --> AA>Generate Collections to Provide:]]\",\n            \"AA --> B(Documentation)\", \n            \"B --- |<- Ongoing Collaboration ->| B\", \n            \"AA --> C(Mocks)\", \n            \"AA --> D(Tests)\", \n            \"AA --> E(Monitors)\", \n            \"B --> F>Publish / Tag New Versions]\", \n            \"C --> F\", \n            \"D --> F\", \n            \"E --> F\", \n            \"G(Model - Code) --> A\",\n            \"F --> FF(API Network)\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"id": "c9111732-bf3f-4ba0-9a4c-98ccf4617f58"
+		},
+		{
+			"name": "List",
+			"id": "7566bfd2-2018-42fb-874a-b6a040a71fb6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/patterns"
+			},
+			"response": [
+				{
+					"id": "d708c465-b137-4a51-a36c-b08d7225a6b0",
+					"name": "List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{url}}/patterns"
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"responseTime": null,
+					"body": "[\n    {\"id\": \"1\", \"name\": \"design-first-general\", \"data\": \"https://69cc9346-cff2-4817-8eaa-3008aa1c4fdf.mock.pstmn.io/patterns/id/1/data\", \"render\": \"https://69cc9346-cff2-4817-8eaa-3008aa1c4fdf.mock.pstmn.io/patterns/id/1/render\"},\n    {\"id\": \"2\", \"name\": \"code-first-general\", \"data\": \"https://69cc9346-cff2-4817-8eaa-3008aa1c4fdf.mock.pstmn.io/patterns/id/2/data\", \"render\": \"https://69cc9346-cff2-4817-8eaa-3008aa1c4fdf.mock.pstmn.io/patterns/id/2/render\"}\n    \n]"
+				}
+			]
+		}
+	]
 }
