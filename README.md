@@ -2,9 +2,11 @@
 
 [This workspace](https://www.postman.com/postman/workspace/api-first-workflow-patterns/overview) includes:
 
-1.  machine-readable pattern definitions (see API-First Workflow Pattern ***Definitions*** collection), and
-2.  a framework collection to enable the automations by instrumenting the Postman API (see API-First Workflow Pattern ***Automations*** collection on the left, which automates the content in [this other workspace](https://postman.postman.co/workspace/Workflow-Automations-Demo~6342c1d6-3bdc-4315-b288-8473fdacf46f/overview)).
+*   machine-readable pattern definitions (see API-First Workflow Pattern ***Definitions*** collection), and
+*   a framework collection to enable the automations by instrumenting the Postman API (see API-First Workflow Pattern ***Automations*** collection on the left).
     
+
+Demo of the automations, using FastAPI and Python: [https://www.youtube.com/watch?v=K54Z5CqrhWM](https://www.youtube.com/watch?v=K54Z5CqrhWM)
 
 Preview of pattern definitions:
 
@@ -22,9 +24,14 @@ Preview of pattern definitions:
 
 ![](https://raw.githubusercontent.com/nlschott/api-first-workflow-patterns/main/pattern-diagrams-static/design-first-general.png)
 
-*   Beautified Versions:
+*   Beautified Versions:  
+    
+    ![](https://raw.githubusercontent.com/nlschott/api-first-workflow-patterns/main/pattern-diagrams-static/beautified-design-first-general.png)
+    
 
-![](https://raw.githubusercontent.com/nlschott/api-first-workflow-patterns/main/pattern-diagrams-static/beautified-design-first-general.png)
+### Automations State Machine:
+
+*   [https://3bc0c93a-71d6-4eb7-ba79-73d16a81f09f.mock.pstmn.io/automations/render](https://3bc0c93a-71d6-4eb7-ba79-73d16a81f09f.mock.pstmn.io/automations/render)
 
 _Update_: For the automation use case, here is a GitHub workflow which instruments the target workspace, using the collection seen here
 - https://github.com/nlschott/api-first-workflow-patterns/blob/main/.github/workflows/api-first-workflow-example.yml
