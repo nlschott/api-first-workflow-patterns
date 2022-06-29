@@ -33,7 +33,6 @@ Preview of pattern definitions:
 
 *   [https://3bc0c93a-71d6-4eb7-ba79-73d16a81f09f.mock.pstmn.io/automations/render](https://3bc0c93a-71d6-4eb7-ba79-73d16a81f09f.mock.pstmn.io/automations/render)
 
-_Update_: For the automation use case, here is a GitHub workflow which instruments the target workspace, using the collection seen here
+_Update_: For the automation use case, here is a GitHub workflow which instruments the target workspace
 - https://github.com/nlschott/api-first-workflow-patterns/blob/main/.github/workflows/api-first-workflow-example.yml
-- ![](https://raw.githubusercontent.com/nlschott/api-first-workflow-patterns/main/pattern-diagrams-static/automation-collection-screenshot.png)
 
