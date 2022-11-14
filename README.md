@@ -1,5 +1,7 @@
 # Workflow Patterns for API-First design, development, testing, publishing, and discovery.
 
+![](https://raw.githubusercontent.com/postman-solutions-eng/assets/main/images/API-First%20Workflow%20Patterns%20%5B%20formerly%20API%20Pipelines%20%5D%20-%20.png)
+
 [This workspace](https://www.postman.com/postman/workspace/api-first-workflow-patterns/overview) includes:
 
 *   machine-readable pattern definitions (see API-First Workflow Pattern ***Definitions*** collection), and
